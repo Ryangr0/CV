@@ -22,13 +22,13 @@
     </android.support.design.widget.AppBarLayout>
 
     <include
-        android:id="@+id/includeMain"
-        layout="@layout/content_main"
+        android:id="@+id/includeAboutMe"
+        layout="@layout/content_about_me"
         android:visibility="visible" />
 
     <include
-        android:id="@+id/includeAboutMe"
-        layout="@layout/content_about_me"
+        android:id="@+id/includeAcademicCareer"
+        layout="@layout/content_academic_career"
         android:visibility="gone" />
 
 </android.support.design.widget.CoordinatorLayout>

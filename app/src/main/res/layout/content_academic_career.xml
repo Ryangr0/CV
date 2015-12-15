@@ -16,9 +16,9 @@
     <com.beardedhen.androidbootstrap.AwesomeTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:bootstrapBrand="danger"
-        app:fontAwesomeIcon="fa_android"
+        app:bootstrapBrand="regular"
         android:textSize="50sp"
+        app:bootstrapText="{fa_question}  That is a question mark."
         />
 
 </RelativeLayout>

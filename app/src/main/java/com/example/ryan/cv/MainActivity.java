@@ -13,12 +13,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.beardedhen.androidbootstrap.TypefaceProvider;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        TypefaceProvider.registerDefaultIconSets();
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -31,6 +35,8 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
     }
 
     @Override
@@ -70,20 +76,19 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        int layoutId = -1;
 
-        View includeMain = (View) findViewById(R.id.includeMain);
         View includeAboutMe = (View) findViewById(R.id.includeAboutMe);
+        View includeAcademicCareer = (View) findViewById(R.id.includeAcademicCareer);
 
 
 
-        if (id == R.id.nav_camera) {
-            includeMain.setVisibility(View.VISIBLE);
-            includeAboutMe.setVisibility(View.GONE);
-
-        } else if (id == R.id.nav_gallery) {
-            includeMain.setVisibility(View.GONE);
+        if (id == R.id.nav_about) {
             includeAboutMe.setVisibility(View.VISIBLE);
+            includeAcademicCareer.setVisibility(View.GONE);
+
+        } else if (id == R.id.nav_academic_career) {
+            includeAboutMe.setVisibility(View.GONE);
+            includeAcademicCareer.setVisibility(View.VISIBLE);
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
